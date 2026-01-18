@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+:root {
+  /* Default to Dark Mode colors */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* Additional variables if needed, but Tailwind 4 handles colors well */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Glassmorphism Utilities */
+@utility glass-panel {
+  @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-xl;
+}
+
+@utility glass-input {
+  @apply backdrop-blur-md bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:bg-white/10 transition-all duration-300;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
